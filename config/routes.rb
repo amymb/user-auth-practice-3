@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  root "static_pages#index"
+  get 'sign_up', to: 'registrations#new'
+  post 'sign_up', to: 'registrations#create'
+  get 'sign_in', to: 'authentication#new'
+  post 'sign_in', to: 'authentication#create'
+  get 'sign_out', to: 'authentication#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
